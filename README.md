@@ -159,10 +159,10 @@ stateDiagram-v2
 ```
 
 #### `MODE 0: STATE_OCULAR_CALIBRATION` (Boot + First 60s)
-* **Operation:** Upon wearing the mask, the user performs a deliberate **Left-Right-Left-Right (LRLR)** maximal eye sweep with closed eyes.
-* **Algorithm:** The MCU measures the peak-to-peak voltage swing ($V_{\text{pp}}$) on `ADS1115_A0/A1` and dynamically sets two personal parameters in NVS flash:
-  * $\text{REM\_SACCADE\_THRESHOLD} = 0.35 \times V_{\text{pp}}$
-  * $\text{HANDSHAKE\_CONFIRM\_THRESHOLD} = 0.75 \times V_{\text{pp}}$
+* **Operation:** Upon wearing the mask, the user performs a deliberate **Left-Right-Left-Right (LRLR)** maximal eye sweep with closed eyes[span_2](start_span)[span_2](end_span).
+* **Algorithm:** The MCU measures the peak-to-peak voltage swing ($V_{\mathrm{pp}}$) on `ADS1115_A0/A1` and dynamically sets two personal parameters in NVS flash[span_3](start_span)[span_3](end_span):
+  * `REM_SACCADE_THRESHOLD` = $0.35 \times V_{\mathrm{pp}}$[span_4](start_span)[span_4](end_span)
+  * `HANDSHAKE_CONFIRM_THRESHOLD` = $0.75 \times V_{\mathrm{pp}}$
 
 #### `MODE 1: STATE_DELTA_SLEEP_GUARD` ($T + 0\text{h}$ to $T + 3.5\text{h}$)
 * **Operation:** Enters ESP32 Light-Sleep mode for the first 210 minutes.
